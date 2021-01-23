@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 import {useQuery} from 'react-query'
 
 // Components
@@ -61,7 +61,7 @@ const App = () => {
     setCartItems(prev => (
       prev.reduce((ack, item) => {
         if (item.id === id) {
-          if(item.amount == 1) return ack;
+          if(item.amount === 1) return ack;
           return [...ack, { ...item, amount: item.amount-1}]
         }
         return [...ack, item]
